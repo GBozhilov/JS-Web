@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c57098b4-96cd-4a51-b9fd-c519892193d0" name="Default Changelist" comment="" />
+    <list default="true" id="c57098b4-96cd-4a51-b9fd-c519892193d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,11 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="1040">
               <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/database.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="1037" selection-start-column="1037" selection-end-column="1037" />
             </state>
           </provider>
         </entry>
@@ -31,6 +42,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,8 +63,8 @@
         <option value="$PROJECT_DIR$/handlers/home.js" />
         <option value="$PROJECT_DIR$/views/products/add.html" />
         <option value="$PROJECT_DIR$/handlers/product.js" />
-        <option value="$PROJECT_DIR$/config/database.json" />
         <option value="$PROJECT_DIR$/config/database.js" />
+        <option value="$PROJECT_DIR$/config/database.json" />
       </list>
     </option>
   </component>
@@ -65,66 +79,19 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-15" />
     <option name="width" value="1179" />
     <option name="height" value="1104" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="handlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopStop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopStop" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,16 +149,18 @@
       <workItem from="1548336082476" duration="16000" />
       <workItem from="1548580416592" duration="8067000" />
       <workItem from="1548594196224" duration="7484000" />
+      <workItem from="1548869588864" duration="51000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34823000" />
+    <option name="totallyTimeSpent" value="34874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1836248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
@@ -300,20 +269,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Lab/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Lab/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Lab/package.json" />
+    <entry file="file://$USER_HOME$/Desktop/Lab/index.js" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -341,34 +298,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38515" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/config/database.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/views/home/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/controllers/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="34" selection-start-line="34" selection-end-line="39" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="48" column="9" lean-forward="true" selection-end-line="52" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/app.js" />
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/package-lock.json" />
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/config/database.json" />
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/views/home/index.html" />
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/controllers/home.js" />
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/config/database.js" />
     <entry file="file://$PROJECT_DIR$/views/home/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-135">
@@ -376,13 +311,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/views/products/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/views/products/add.html" />
     <entry file="file://$PROJECT_DIR$/views/products/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -390,13 +319,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.js" />
     <entry file="file://$PROJECT_DIR$/handlers/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -407,21 +330,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/images/6hZPbTQbo.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/images/vsogoS-lJ.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/content/images/6hZPbTQbo.JPG" />
+    <entry file="file://$PROJECT_DIR$/content/images/vsogoS-lJ.jpg" />
     <entry file="file://$PROJECT_DIR$/content/images/-U-YAQ-rW.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1038" lean-forward="true" selection-start-column="1038" selection-end-column="1038" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/images/ilNfKJnam.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -432,13 +344,7 @@
     <entry file="file://$PROJECT_DIR$/content/images/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/controllers/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="41" selection-end-line="93" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Shop-Stop-Part-2/controllers/product.js" />
     <entry file="file://$PROJECT_DIR$/handlers/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -448,8 +354,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
+        <state relative-caret-position="1040">
           <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1037" selection-start-column="1037" selection-end-column="1037" />
         </state>
       </provider>
     </entry>
