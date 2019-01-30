@@ -1,0 +1,13 @@
+<div>
+    <h1>Workout name: {{name}}</h1>
+    <h1>Exercises:</h1>
+    <ul>
+        {{#each exercises}}
+            <ol>
+                <h2>Name - {{name}}</h2>
+                <span>Sets - {{sets}}</span>
+                <span>Reps - {{reps}}</span>
+            </ol>
+        {{/each}}
+    </ul>
+</div>
