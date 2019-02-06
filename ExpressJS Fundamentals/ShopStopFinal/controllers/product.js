@@ -14,6 +14,7 @@ module.exports.addGet = (req, res) => {
 module.exports.addPost = async (req, res) => {
     let productObj = req.body;
     productObj.image = '\\' + req.file.path;
+    productObj.creator = req.user._id;
 
     let product = await Product.create(productObj);
     let category = await Category.findById(product.category);
@@ -34,11 +35,16 @@ module.exports.editGet = (req, res) => {
                 return;
             }
 
-            Category
-                .find()
-                .then(categories => {
-                    res.render('product/edit', {product, categories})
-                });
+            if (product.creator.equals(req.user._id)
+                || req.user.roles.indexOf('Admin') >= 0) {
+                Category
+                    .find()
+                    .then(categories => {
+                        res.render('product/edit', {product, categories})
+                    });
+            } else {
+                res.redirect(`/?error=${encodeURIComponent('Only Admins Or Creators Can Edit')}`);
+            }
         })
 };
 
@@ -49,7 +55,7 @@ module.exports.editPost = async (req, res) => {
     const product = await Product.findById(id);
 
     if (!product) {
-        res.redirect(`/?error=${encodeURIComponent('Product was not found!')}`);
+        res.redirect(`/?error=${encodeURIComponent('Product Was Not Found!')}`);
         return;
     }
 
@@ -84,7 +90,7 @@ module.exports.editPost = async (req, res) => {
                         product
                             .save()
                             .then(() => {
-                                res.redirect(`/?success=${encodeURIComponent('Product was edited successfully!')}`);
+                                res.redirect(`/?success=${encodeURIComponent('Product Was Edited Successfully')}`);
                             });
                     })
             })
@@ -92,7 +98,7 @@ module.exports.editPost = async (req, res) => {
         product
             .save()
             .then(() => {
-                res.redirect(`/?success=${encodeURIComponent('Product was edited successfully!')}`);
+                res.redirect(`/?success=${encodeURIComponent('Product Was Edited Successfully')}`);
             });
     }
 };
@@ -108,7 +114,11 @@ module.exports.deleteGet = (req, res) => {
                 return;
             }
 
-            res.render('product/delete', {product});
+            if (product.creator.equals(req.user._id)
+                || req.user.roles.indexOf('Admin') >= 0) {
+
+                res.render('product/delete', {product});
+            }
         })
 };
 
@@ -137,7 +147,7 @@ module.exports.deletePost = (req, res) => {
                         .remove({_id: id})
                         .then(() => {
                             fs.unlink(path.normalize(path.join('.', product.image)), () => {
-                                res.redirect(`/?success=${encodeURIComponent('Product was deleted successfully!')}`);
+                                res.redirect(`/?success=${encodeURIComponent('Product Was Deleted Successfully')}`);
                             })
                         });
                 });
@@ -157,4 +167,50 @@ module.exports.buyGet = (req, res) => {
 
             res.render('product/buy', {product});
         })
+};
+
+module.exports.buyPost = (req, res) => {
+    const productId = req.params.id;
+
+    Product
+        .findById(productId)
+        .then(product => {
+            if (product.buyer) {
+                const error = `error=${encodeURIComponent('Product Was Already Bought')}`;
+                res.redirect(`/?${error}`);
+                return;
+            }
+
+            product.buyer = req.user._id;
+            product.save()
+                .then(() => {
+                    req.user.boughtProducts.push(productId);
+                    req.user
+                        .save()
+                        .then(() => {
+                            res.redirect('/');
+                        })
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            res.redirect(`/?${err}`);
+        });
+};
+
+module.exports.resetGet = (req, res) => {
+    res.render('product/reset');
+};
+
+module.exports.resetPost = (req, res) => {
+    Product.find()
+        .then(products => {
+            products.forEach(p => {
+                p.buyer = null;
+                p.save();
+            });
+
+            res.redirect('/');
+        })
+        .catch(e => console.log(e));
 };
