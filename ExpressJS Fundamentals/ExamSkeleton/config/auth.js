@@ -3,7 +3,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             next();
         } else {
-            res.redirect('/user/login');
+            res.redirect('/login');
         }
     },
     hasRole: (role) => (req, res, next) => {
@@ -11,7 +11,7 @@ module.exports = {
             req.user.roles.indexOf(role) > -1) {
             next();
         } else {
-            res.redirect('/user/login');
+            res.redirect('/login');
         }
     },
     isAnonymous: (req, res, next) => {
@@ -21,4 +21,4 @@ module.exports = {
             res.redirect('/');
         }
     }
-};
+}

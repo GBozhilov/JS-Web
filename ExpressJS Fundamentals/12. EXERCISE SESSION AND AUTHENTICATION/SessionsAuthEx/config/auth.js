@@ -1,6 +1,6 @@
 module.exports = {
     isAuthed: (req, res, next) => {
-        if (req.user || req.user.roles.indexOf('Admin') !== -1) {
+        if (req.isAuthenticated()) {
             next();
         } else {
             res.redirect('/user/login');

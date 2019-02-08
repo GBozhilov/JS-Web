@@ -90,6 +90,9 @@ module.exports = {
 
         Rent.create({days, car, user, expiresOn})
             .then(rent => {
+                req.user.rents.push(rent._id);
+                req.user.save();
+
                 Car.findById(car)
                     .then(c => {
                         c.isRented = true;

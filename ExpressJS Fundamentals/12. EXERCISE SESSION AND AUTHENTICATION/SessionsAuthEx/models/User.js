@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     firstName: {type: mongoose.Schema.Types.String},
     lastName: {type: mongoose.Schema.Types.String},
     salt: {type: mongoose.Schema.Types.String, required: true},
-    roles: [{type: mongoose.Schema.Types.String}]
+    roles: [{type: mongoose.Schema.Types.String}],
+    rents: [{type: mongoose.Schema.Types.ObjectId, ref: 'Rent'}]
 });
 
 userSchema.method({
@@ -27,10 +28,10 @@ User.seedAdmin = async () => {
         }
 
         const salt = encryption.generateSalt();
-        const hashedPass = encryption.generateHashedPassword(salt, 'Admin');
+        const hashedPass = encryption.generateHashedPassword(salt, '123');
 
         return User.create({
-            username: 'Admin',
+            username: 'admin',
             hashedPass,
             firstName: 'Gosho',
             lastName: 'Bozhilov',
