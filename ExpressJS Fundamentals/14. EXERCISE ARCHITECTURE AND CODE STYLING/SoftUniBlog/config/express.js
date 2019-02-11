@@ -37,7 +37,6 @@ module.exports = (app, config) => {
             if (res.locals.user.isInRole('Admin')) {
                 res.locals.isAdmin = res.locals.user.isInRole('Admin');
             }
-
         }
         next();
     });
