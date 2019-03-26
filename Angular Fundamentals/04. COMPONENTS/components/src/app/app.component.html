@@ -5,10 +5,10 @@
   </label>
 </div>
 <div id="todo-list">
+    <input type="text" #filterInput>
     <softuni-todo-item
         *ngFor="let todo of todos; let i = index;"
         [todo]="todo" (toggleEvent)="toggleCompleted(i, $event)"
     >
-
     </softuni-todo-item>
 </div>

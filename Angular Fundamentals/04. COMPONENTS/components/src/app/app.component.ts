@@ -1,4 +1,7 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {TodoService} from './todo.service';
+import {ITodo} from './interfaces';
+import {fromEvent} from 'rxjs';
 
 @Component({
     selector: 'softuni-root',
@@ -6,29 +9,24 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-    @ViewChild('nameInput') nameInput;
+    @ViewChild('filterInput') filterInput: ElementRef;
+    todos: ITodo[];
 
-    name = 'Enter Your Name';
-    todos = [];
-
-    constructor() {
-
+    constructor(private todoService: TodoService) {
+        this.todos = todoService.todos;
     }
 
     ngAfterViewInit(): void {
-        this.nameInput.nativeElement.value = 'Initial value';
-    }
-
-    onKeyUpHandler(value: string) {
-        console.log(value);
+        fromEvent(this.filterInput.nativeElement, 'keyup').subscribe(e => {
+            console.log(e);
+        });
     }
 
     addTodo(title: string) {
-        this.todos = this.todos.concat({title, completed: false});
+        this.todoService.addTodo(title);
     }
 
     toggleCompleted(idx: number) {
-        const currentTodo = this.todos[idx];
-        this.todos[idx] = {...currentTodo, completed: !currentTodo.completed};
+        this.todoService.toggleCompleted(idx);
     }
 }
