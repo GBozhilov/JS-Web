@@ -1,7 +1,7 @@
-/* tslint:disable:no-string-literal */
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MovieService} from '../services/movie.service';
 import Movie from '../models/Movie';
+import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-movies',
@@ -9,28 +9,45 @@ import Movie from '../models/Movie';
     styleUrls: ['./movies.component.css']
 })
 
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
     popularMovies: Movie[];
     inTheaterMovies: Movie[];
+    popularKidsMovies: Movie[];
+    bestDramaMovies: Movie[];
     message: null;
+    popularMoviesSub: Subscription;
 
     constructor(private moviesService: MovieService) {
     }
 
-    ngOnInit() {
-        this.moviesService
+    ngOnInit(): void {
+        this.popularMoviesSub = this.moviesService
             .getPopularMovies()
             .subscribe(data => {
-                this.popularMovies = data['results'].slice(0, 6);
+                this.popularMovies = data;
             });
         this.moviesService
             .getInTheaterMovies()
             .subscribe(data => {
-                this.inTheaterMovies = data['results'].slice(6, 12);
+                this.inTheaterMovies = data;
+            });
+        this.moviesService
+            .getKidsMovies()
+            .subscribe(data => {
+                this.popularKidsMovies = data;
+            });
+        this.moviesService
+            .getBestDramaMovies()
+            .subscribe(data => {
+                this.bestDramaMovies = data;
             });
     }
 
     fromChild(event) {
         this.message = event;
+    }
+
+    ngOnDestroy(): void {
+        this.popularMoviesSub.unsubscribe();
     }
 }
