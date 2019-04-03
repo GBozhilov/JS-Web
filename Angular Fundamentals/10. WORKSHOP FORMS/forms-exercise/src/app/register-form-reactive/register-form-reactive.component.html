@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <h1>Registration Form</h1>
+      <form [formGroup]="form" (submit)="register()">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input class="form-control" formControlName="fullName" placeholder="Full Name">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.fullName.touched && f.fullName.errors?.required">
+          Full Name Is Required
+        </div>
+        <div class="alert alert-danger" *ngIf="f.fullName.errors?.pattern">
+          Name Does Not Match The Pattern
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+          <input class="form-control" formControlName="email" placeholder="Email Address" type="email">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors?.required">
+          Email Is Required
+        </div>
+        <div class="alert alert-danger" *ngIf="f.email.errors?.pattern">
+          Invalid Email
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <select class="custom-select" style="max-width: 130px;">
+            <option disabled>Select Code</option>
+            <option value="{{code}}" *ngFor="let code of phoneCodes">{{code}}</option>
+          </select>
+          <input class="form-control" formControlName="phoneNumber" placeholder="Phone Number" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.phoneNumber.touched && f.phoneNumber.errors?.required">
+          Phone Number Is Required
+        </div>
+        <div class="alert alert-danger" *ngIf="f.phoneNumber.errors?.pattern">
+          The Phone Number Must Be A 9 Digit Number
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+          </div>
+          <select class="form-control" formControlName="jobTitle">
+            <option disabled>Select Position</option>
+            <option value="Designer">Designer</option>
+            <option value="Manager">Manager</option>
+            <option value="Accounting">Accounting</option>
+          </select>
+        </div>
+        <div class="alert alert-danger" *ngIf="f.jobTitle.touched && f.jobTitle.errors?.required">
+          Position Is Required
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input class="form-control" formControlName="password" placeholder="Create Password" type="password">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.required">
+          Password Is Required
+        </div>
+        <div class="alert alert-danger" *ngIf="f.password.errors?.pattern">
+          Password Must Contain Digits And Letters
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input class="form-control" formControlName="confirmPassword" placeholder="Repeat Password" type="password">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.password?.value !== f.confirmPassword?.value">
+          Passwords Do Not Match
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Create Account</button>
+        </div>
+        <p class="text-center">Have an account? <a href="">Log In</a></p>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
