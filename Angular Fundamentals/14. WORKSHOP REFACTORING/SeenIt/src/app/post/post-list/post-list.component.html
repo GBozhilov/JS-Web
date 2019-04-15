@@ -1,0 +1,10 @@
+<section id="viewCatalog">
+  <div class="posts">
+    <app-post-info
+      *ngFor="let post of (allPosts$ | async); let i = index;"
+      [post]="post"
+      [rank]="i"
+    >
+    </app-post-info>
+  </div>
+</section>
